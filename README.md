@@ -8,7 +8,7 @@ This repository implements an **Attitude Determination and Control System (ADCS)
 * **Control Strategy:**
     * *Discrete LQI Controller:* Optimal control with integral action for zero steady-state error.
     * *Anti-Windup:* Logic to prevent integral accumulation during actuator saturation.
-* *Estimation:*
+* **Estimation:**
     * *Extended Kalman Filter:* Fuses noisy sensor data to estimate attitude and angular velocity.
     * Realistic sensor noise models (white noise, bias instability, jitter).
 * **Simulation:**
