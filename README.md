@@ -1,9 +1,7 @@
-# CubeSat Attitude Control System with Discrete LQI & Kalman Filter
+# CubeSat Attitude Control System
+This repository implements an **Attitude Determination and Control System (ADCS)** for a CubeSat using MATLAB & Simulink. The project focuses on stabilizing the spacecraft using reaction wheels with a *LQI controller* and a *Kalman Filter* for state estimation.
 
-This repository implements an**Attitude Determination and Control System (ADCS)** for a CubeSat using MATLAB & Simulink. The project focuses on stabilizing the spacecraft using reaction wheels with a *LQI controller* and a *Kalman Filter* for state estimation.
-
-## 🚀 Key Features
-
+## Key Features
 * **Dynamic Modeling:**
     * Full non-linear rigid body dynamics.
     * Inertia tensor calculation based on geometry (Structure + Reaction Wheels).
@@ -20,15 +18,7 @@ This repository implements an**Attitude Determination and Control System (ADCS)*
     * **Disturbance Rejection:** Tests robustness against external torques (e.g., gravity gradient, micrometeroid impacts).
     * **3D Animation:** Integrated script to visualize the satellite's orientation.
 
-## 📂 Repository Structure
-
-* `final_project_CyS.mlx`: The main MATLAB Live Script. It handles parameter definition, control design (LQR/LQI), and post-processing.
-* `discrete_complete_model.slx`: The Simulink model containing the plant, controller, and sensor blocks.
-* `animation.m`: Helper script for 3D visualization of the spacecraft.
-* `README.md`: Project documentation.
-
 ## 🛠️ System Parameters
-
 | Parameter | Value | Description |
 | :--- | :--- | :--- |
 | **Mass** | ~2.12 kg | 2U CubeSat Frame + 3 Wheels |
@@ -36,26 +26,25 @@ This repository implements an**Attitude Determination and Control System (ADCS)*
 | **Sensors** | ADCS, Gyro, Hall | Modeled with Gaussian noise and bias |
 | **Controller** | Discrete LQI | Sample Time: 0.01s (100 Hz) |
 
-## 💻 How to Run
-
+## How to Run
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/YourUsername/Your-Repo-Name.git](https://github.com/YourUsername/Your-Repo-Name.git)
+    git clone [https://github.com/nahuelpucciarelli/Attitude-Control-Cubesat.git](https://github.com/nahuelpucciarelli/Attitude-Control-Cubesat.git)
     ```
 2.  **Open MATLAB:**
-    Ensure you have the **Control System Toolbox** installed.
+    R2023b version or later
 3.  **Launch the Script:**
-    Open `final_project_CyS.mlx`.
+    Open `Matlab Files/final_project_CyS.mlx`.
 4.  **Run Simulation:**
+    All the files need to be in the same folder.
     Click **Run All** or **Run Section** in the Live Editor. This will:
     * Load parameters.
     * Linearize the plant.
     * Compute LQI gains.
     * Run the Simulink simulation.
-    * Generate performance plots and animation.
+    * Generate plots and animation.
 
-## ⚙️ Configuration & Options
-
+## Configuration & Options
 You can customize the simulation directly at the top of the `final_project_CyS.mlx` script.
 
 ### 1. General Settings (Section: *Simulink Model Options*)
@@ -68,6 +57,5 @@ You can customize the simulation directly at the top of the `final_project_CyS.m
 ### 2. Changing Reference Angles (Section: *Trajectory and Disturbance*)
 To change where the satellite points, modify the vectors (in degrees). Continuous and step disturbances can be added (in Nm).
 
-## 👤 Author
-
-**Nahuel Pucciarelli** - *Mechatronics Engineering Student*
+## Author
+*Nahuel Pucciarelli*
