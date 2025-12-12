@@ -4,27 +4,17 @@ This repository implements an **Attitude Determination and Control System (ADCS)
 ## Key Features
 * **Dynamic Modeling:**
     * Full non-linear rigid body dynamics.
-    * Inertia tensor calculation based on geometry (Structure + Reaction Wheels).
-    * Steiner theorem application for off-center wheel placement.
+    * Inertia tensor calculation based on geometry (structure + reaction wheels).
 * **Control Strategy:**
-    * **Discrete LQI Controller:** Optimal control with integral action for zero steady-state error.
-    * **Anti-Windup:** Logic to prevent integral accumulation during actuator saturation.
-    * **Jacobian Linearization:** Automated linearization of the non-linear plant.
-* **Estimation:**
-    * **Extended Kalman Filter (EKF):** Fuses noisy sensor data (ADCS, Gyro, Hall Sensors) to estimate attitude and angular velocity.
-    * Realistic sensor noise models (White Noise, Bias Instability, Jitter).
+    * *Discrete LQI Controller:* Optimal control with integral action for zero steady-state error.
+    * *Anti-Windup:* Logic to prevent integral accumulation during actuator saturation.
+* *Estimation:*
+    * *Extended Kalman Filter:* Fuses noisy sensor data to estimate attitude and angular velocity.
+    * Realistic sensor noise models (white noise, bias instability, jitter).
 * **Simulation:**
-    * **Discrete Time Domain:** Controller runs at 100Hz (dt = 0.01s).
-    * **Disturbance Rejection:** Tests robustness against external torques (e.g., gravity gradient, micrometeroid impacts).
-    * **3D Animation:** Integrated script to visualize the satellite's orientation.
-
-## 🛠️ System Parameters
-| Parameter | Value | Description |
-| :--- | :--- | :--- |
-| **Mass** | ~2.12 kg | 2U CubeSat Frame + 3 Wheels |
-| **Actuators** | 3 Reaction Wheels | Max Torque: 0.6 mNm, Max Speed: 5600 RPM |
-| **Sensors** | ADCS, Gyro, Hall | Modeled with Gaussian noise and bias |
-| **Controller** | Discrete LQI | Sample Time: 0.01s (100 Hz) |
+    * *Discrete Time Domain:* Controller runs at 100Hz (dt = 0.01s).
+    * *Disturbance Rejection:* Tests robustness against external torques (e.g., gravity gradient, micrometeroid impacts).
+    * *3D Animation:* Integrated script to visualize the satellite's orientation.
 
 ## How to Run
 1.  **Clone the repository:**
@@ -34,10 +24,9 @@ This repository implements an **Attitude Determination and Control System (ADCS)
 2.  **Open MATLAB:**
     R2023b version or later
 3.  **Launch the Script:**
-    Open `Matlab Files/final_project_CyS.mlx`.
+    Open `final_project_CyS.mlx` in the `Matlab Files` folder
 4.  **Run Simulation:**
-    All the files need to be in the same folder.
-    Click **Run All** or **Run Section** in the Live Editor. This will:
+    Click *Run All* or *Run Section* in the Live Editor. This will:
     * Load parameters.
     * Linearize the plant.
     * Compute LQI gains.
@@ -45,7 +34,7 @@ This repository implements an **Attitude Determination and Control System (ADCS)
     * Generate plots and animation.
 
 ## Configuration & Options
-You can customize the simulation directly at the top of the `final_project_CyS.mlx` script.
+You can customize the simulation directly at the top of the script.
 
 ### 1. General Settings (Section: *Simulink Model Options*)
 | Variable | Value | Description |
@@ -55,7 +44,7 @@ You can customize the simulation directly at the top of the `final_project_CyS.m
 | `save_gif` | `true` / `false` | Set to `true` to save the 3D animation as a `.gif` file. |
 
 ### 2. Changing Reference Angles (Section: *Trajectory and Disturbance*)
-To change where the satellite points, modify the vectors (in degrees). Continuous and step disturbances can be added (in Nm).
+To change where the satellite points, modify the input and output vectors (in degrees). Continuous and step disturbances can be added (in Nm).
 
 ## Author
 *Nahuel Pucciarelli*
