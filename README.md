@@ -44,7 +44,7 @@ You can customize the simulation directly at the top of the script.
 | `save_gif` | `true` / `false` | Set to `true` to save the 3D animation as a `.gif` file. |
 
 ### 2. Changing Reference Angles (Section: *Trajectory and Disturbance*)
-To change where the satellite points, modify the input and output vectors (in degrees). Continuous and step disturbances can be added (in Nm).
+To change where the satellite points, modify the output vectors (in degrees). Continuous and step disturbances can be added (in Nm).
 
 ## Author
 *Nahuel Pucciarelli*
