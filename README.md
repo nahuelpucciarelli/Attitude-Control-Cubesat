@@ -1,7 +1,7 @@
 # CubeSat Attitude Control System
 This repository implements an **Attitude Determination and Control System (ADCS)** for a CubeSat using MATLAB & Simulink. The project focuses on stabilizing the spacecraft using reaction wheels with a *LQI controller* and a *Kalman Filter* for state estimation.
 
-![Basic Manouver](./Animations/cubesat_translucent.gif)
+![](./Animations/basic.gif)
 
 ## Key Features
 * **Dynamic Modeling:**
